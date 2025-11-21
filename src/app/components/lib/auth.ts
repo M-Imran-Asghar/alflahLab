@@ -1,8 +1,7 @@
-// src/app/lib/auth.ts
-// Simulated authentication - replace with real auth logic
 let isLoggedIn = false
 
 export async function isAuthenticated(): Promise<boolean> {
+  // In real app, check cookies, tokens, or session
   return isLoggedIn
 }
 
@@ -32,4 +31,5 @@ export async function signup(email: string, password: string, name: string): Pro
 
 export async function logout(): Promise<void> {
   isLoggedIn = false
+  // In real app, clear cookies/tokens
 }
