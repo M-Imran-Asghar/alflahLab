@@ -59,7 +59,7 @@ export default function RecordsPage() {
             </div>
           </div>
            <div className="pt-2">
-            <Button variant="primary" className="w-full" >Update Record</Button>
+            <Button  className="w-full" >Update Record</Button>
            </div>
         </div>
 
@@ -138,7 +138,7 @@ export default function RecordsPage() {
           </div>
           
           <div className="mt-8 flex gap-3 justify-end">
-              <Button variant="primary" className="w-32" >Search</Button>
+              <Button  className="w-32" >Search</Button>
               <Button variant="secondary" className="w-32" >Clear Filters</Button>
           </div>
         </div>

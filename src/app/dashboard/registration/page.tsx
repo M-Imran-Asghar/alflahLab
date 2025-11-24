@@ -64,7 +64,7 @@ export default function RegistrationPage() {
 
             <div className="grid grid-cols-4 gap-4 items-center pt-4">
                <div className="col-start-1 col-span-4">
-                 <Button variant="primary" className="w-full bg-slate-700" >Update</Button>
+                 <Button  className="w-full bg-slate-700" >Update</Button>
                </div>
             </div>
 
@@ -176,7 +176,7 @@ export default function RegistrationPage() {
 
              <div className="grid grid-cols-4 gap-4 items-center pt-4">
                 <div className="col-span-4 flex justify-end gap-3">
-                  <Button variant="primary" className="w-24 bg-blue-600 hover:bg-blue-700">Search</Button>
+                  <Button  className="w-24 bg-blue-600 hover:bg-blue-700">Search</Button>
                   <Button variant="secondary" className="w-24">Clear</Button>
                 </div>
              </div>

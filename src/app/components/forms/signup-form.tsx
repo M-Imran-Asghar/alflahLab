@@ -43,7 +43,7 @@ export default function SignupForm() {
       )}
       
       <input
-        label="Full Name"
+        
         name="name"
         type="text"
         required
@@ -52,7 +52,7 @@ export default function SignupForm() {
       />
       
       <input
-        label="Email"
+       
         name="email"
         type="email"
         required
@@ -61,7 +61,7 @@ export default function SignupForm() {
       />
       
       <input
-        label="Password"
+        
         name="password"
         type="password"
         required
