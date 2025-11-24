@@ -1,24 +1,39 @@
-import { redirect } from 'next/navigation'
-import { isAuthenticated } from '../components/lib/auth'
-import Navbar from '../components/layout/navbar'
+// src/app/(dashboard)/layout.tsx
+'use client';
 
-export default async function DashboardLayout({
+import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import Navbar from '@/app/components/layout/navbar';
+import { Toaster } from '@/components/ui/sonner';
+import { TooltipProvider } from '@/components/ui/tooltip';
+
+export default function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const authenticated = await isAuthenticated()
-  
-  // if (!authenticated) {
-  //   redirect('/login')
-  // }
+  const pathname = usePathname();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        {children}
-      </main>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <TooltipProvider>
+        <Navbar />
+        <main className="pt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={pathname}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="min-h-[calc(100vh-8rem)]"
+            >
+              {children}
+            </motion.div>
+          </AnimatePresence>
+        </main>
+        <Toaster position="top-center" richColors />
+      </TooltipProvider>
     </div>
-  )
+  );
 }
